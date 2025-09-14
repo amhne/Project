@@ -1,0 +1,1 @@
+Simple Note Android project
