@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="9dp">
+
+        <ImageView
+            android:id="@+id/searchIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:padding="3dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_search"/>
+
+        <LinearLayout
+            android:id="@+id/searchBar"
+            android:layout_width="292dp"
+            android:layout_height="36dp"
+            android:paddingEnd="16dp"
+            android:paddingStart="13dp"
+            android:paddingVertical="6dp"
+            android:layout_marginHorizontal="12dp"
+            android:orientation="horizontal"
+            android:background="@drawable/search_field"
+            android:gravity="center_vertical"
+            android:layout_toEndOf="@id/searchIcon"
+            android:layout_centerVertical="true"
+            tools:ignore="RtlSymmetry">
+
+            <SearchView
+                android:id="@+id/searchEditText"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/inter"
+                android:queryHint="@string/search_hint"
+                android:inputType="text"
+                android:iconifiedByDefault="false"
+                android:queryBackground="@null"
+                android:paddingVertical="8dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/dark_gray"
+                android:textSize="14sp"
+                android:translationY="-1.33px"
+                tools:ignore="TouchTargetSizeCheck,VisualLintBounds"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="14sp"
+        android:layout_marginBottom="12dp"
+        android:gravity="center"
+        android:text="@string/home_title"
+        android:layout_below="@id/header"
+        android:textColor="@color/black"
+        android:fontFamily="@font/inter_bold"/>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/title"
+        android:layout_above="@+id/wrapper">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:paddingHorizontal="16dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <LinearLayout
+        android:id="@+id/wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:paddingHorizontal="14dp"
+        android:paddingBottom="14dp"
+        android:paddingTop="39dp"
+        android:orientation="horizontal"
+        android:gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:id="@+id/leftContainer"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_weight="1"
+            android:gravity="start"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/clickLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageLeft"
+                    android:layout_width="52dp"
+                    android:layout_height="32dp"
+                    android:paddingHorizontal="13.2dp"
+                    android:paddingVertical="3.2dp"
+                    android:src="@drawable/ic_home" />
+
+                <TextView
+                    android:id="@+id/textLeft"
+                    android:layout_width="52dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="11sp"
+                    android:fontFamily="@font/inter"
+                    android:gravity="center_horizontal"
+                    android:text="@string/Home"
+                    android:textColor="@color/purple" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/centerContainer"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="8dp"
+            tools:ignore="SpeakableTextPresentCheck">
+
+            <ImageView
+                android:id="@+id/imageCenter"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_add"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/rightContainer"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/clickRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageRight"
+                    android:layout_width="52dp"
+                    android:layout_height="32dp"
+                    android:paddingHorizontal="13.2dp"
+                    android:paddingVertical="3.2dp"
+                    android:src="@drawable/ic_settings"/>
+
+                <TextView
+                    android:id="@+id/textRight"
+                    android:layout_width="52dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="11sp"
+                    android:fontFamily="@font/inter"
+                    android:gravity="center_horizontal"
+                    android:text="@string/Settings"
+                    android:textColor="@color/dark_gray"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

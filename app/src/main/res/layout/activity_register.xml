@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="16dp"
+            android:layout_alignParentTop="true">
+
+            <LinearLayout
+                android:id="@+id/headerWrapper"
+                android:layout_width="wrap_content"
+                android:layout_height="54dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/headerImage"
+                    android:layout_width="20dp"
+                    android:layout_height="22dp"
+                    android:layout_marginEnd="8dp"
+                    android:paddingHorizontal="7dp"
+                    android:paddingVertical="6dp"
+                    android:src="@drawable/ic_back" />
+
+                <TextView
+                    android:id="@+id/headerText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="22dp"
+                    android:fontFamily="@font/inter"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/register_header"
+                    android:textColor="@color/purple"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/header"
+            android:paddingTop="10dp"
+            android:paddingHorizontal="16dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:textSize="32sp"
+                android:text="@string/register_title"
+                android:fontFamily="@font/inter_bold"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:translationY="-1.52sp"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"
+                android:gravity="top"
+                android:text="@string/register_subtitle"
+                android:fontFamily="@font/inter"
+                android:layout_below="@id/title"
+                android:textColor="@color/dark_gray"/>
+
+            <TextView
+                android:id="@+id/fnameTitle"
+                android:layout_width="328dp"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_marginTop="32dp"
+                android:layout_centerHorizontal="true"
+                android:text="@string/fname_title"
+                android:layout_below="@id/subtitle"
+                android:fontFamily="@font/inter_medium"
+                android:textColor="@color/black"/>
+
+            <RelativeLayout
+                android:id="@+id/fnameContainer"
+                android:layout_width="328dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:padding="16dp"
+                android:layout_below="@id/fnameTitle"
+                android:background="@drawable/input_field">
+
+                <EditText
+                    android:id="@+id/inputFname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:translationY="-1.52sp"
+                    android:background="@android:color/transparent"
+                    android:gravity="top"
+                    android:hint="@string/fname_hint"
+                    android:inputType="textPersonName"
+                    android:fontFamily="@font/inter"
+                    android:textColorHint="@color/input_gray"
+                    tools:ignore="TouchTargetSizeCheck"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/lnameTitle"
+                android:layout_width="328dp"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_marginTop="32dp"
+                android:layout_centerHorizontal="true"
+                android:text="@string/lname_title"
+                android:layout_below="@id/fnameContainer"
+                android:fontFamily="@font/inter_medium"
+                android:textColor="@color/black"/>
+
+            <RelativeLayout
+                android:id="@+id/lnameContainer"
+                android:layout_width="328dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:padding="16dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/lnameTitle"
+                android:background="@drawable/input_field">
+
+                <EditText
+                    android:id="@+id/inputLname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:translationY="-1.52sp"
+                    android:background="@android:color/transparent"
+                    android:gravity="top"
+                    android:hint="@string/lname_hint"
+                    android:inputType="textPersonName"
+                    android:fontFamily="@font/inter"
+                    android:textColorHint="@color/input_gray"
+                    tools:ignore="TouchTargetSizeCheck"/>
+            </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/unameTitle"
+                    android:layout_width="328dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:layout_marginTop="32dp"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/uname_title"
+                    android:layout_below="@id/lnameContainer"
+                    android:fontFamily="@font/inter_medium"
+                    android:textColor="@color/black"/>
+
+                <RelativeLayout
+                    android:id="@+id/unameContainer"
+                    android:layout_width="328dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:padding="16dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/unameTitle"
+                    android:background="@drawable/input_field">
+
+                    <EditText
+                        android:id="@+id/inputUname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:translationY="-1.52sp"
+                        android:background="@android:color/transparent"
+                        android:gravity="top"
+                        android:hint="@string/uname_hint"
+                        android:inputType="textPersonName"
+                        android:fontFamily="@font/inter"
+                        android:textColorHint="@color/input_gray"
+                        tools:ignore="TouchTargetSizeCheck"/>
+                </RelativeLayout>
+
+            <TextView
+                android:id="@+id/emailTitle"
+                android:layout_width="328dp"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_marginTop="32dp"
+                android:layout_centerHorizontal="true"
+                android:text="@string/email_title"
+                android:layout_below="@id/unameContainer"
+                android:fontFamily="@font/inter_medium"
+                android:textColor="@color/black"/>
+
+            <RelativeLayout
+                android:id="@+id/emailContainer"
+                android:layout_width="328dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:padding="16dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/emailTitle"
+                android:background="@drawable/input_field">
+
+                <EditText
+                    android:id="@+id/inputEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:translationY="-1.52sp"
+                    android:background="@android:color/transparent"
+                    android:gravity="top"
+                    android:hint="@string/email_hint"
+                    android:inputType="textEmailAddress"
+                    android:fontFamily="@font/inter"
+                    android:textColorHint="@color/input_gray"
+                    tools:ignore="TouchTargetSizeCheck"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/passwordTitle"
+                android:layout_width="328dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:textSize="16sp"
+                android:layout_centerHorizontal="true"
+                android:text="@string/password_title"
+                android:layout_below="@id/emailContainer"
+                android:fontFamily="@font/inter_medium"
+                android:textColor="@color/black"/>
+
+            <RelativeLayout
+                android:id="@+id/passwordContainer"
+                android:layout_width="328dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:padding="16dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/passwordTitle"
+                android:background="@drawable/input_field">
+
+                <EditText
+                    android:id="@+id/inputPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:translationY="-1.52sp"
+                    android:background="@android:color/transparent"
+                    android:gravity="top"
+                    android:hint="@string/password_hint"
+                    android:inputType="textPassword"
+                    android:fontFamily="@font/inter"
+                    android:textColorHint="@color/input_gray"
+                    tools:ignore="TouchTargetSizeCheck"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/rePasswordTitle"
+                android:layout_width="328dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:textSize="16sp"
+                android:layout_centerHorizontal="true"
+                android:text="@string/re_password_title"
+                android:layout_below="@id/passwordContainer"
+                android:fontFamily="@font/inter_medium"
+                android:textColor="@color/black"/>
+
+            <RelativeLayout
+                android:id="@+id/rePasswordContainer"
+                android:layout_width="328dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:padding="16dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/rePasswordTitle"
+                android:background="@drawable/input_field">
+
+                <EditText
+                    android:id="@+id/inputRePassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:translationY="-1.52sp"
+                    android:background="@android:color/transparent"
+                    android:gravity="top"
+                    android:hint="@string/password_hint"
+                    android:inputType="textPassword"
+                    android:fontFamily="@font/inter"
+                    android:textColorHint="@color/input_gray"
+                    tools:ignore="TouchTargetSizeCheck"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/buttonLayout"
+                android:layout_width="328dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="34dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/rePasswordContainer"
+                android:background="@drawable/button_purple"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:id="@+id/buttonText"
+                    android:layout_width="140dp"
+                    android:layout_height="22dp"
+                    android:textSize="16sp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/inter_medium"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/register_button"
+                    android:textColor="@color/white"/>
+
+                <ImageView
+                    android:id="@+id/buttonIcon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_arrow"
+                    android:tint="@color/white"
+                    tools:ignore="UseAppTint"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/loginText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="32dp"
+                android:paddingTop="16dp"
+                android:paddingHorizontal="24dp"
+                android:layout_below="@id/buttonLayout"
+                android:gravity="center"
+                android:text="@string/register_bottom_text"
+                android:fontFamily="@font/inter_medium"
+                android:textColor="@color/purple"/>
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+</RelativeLayout>
